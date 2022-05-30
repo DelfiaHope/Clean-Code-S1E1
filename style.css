@@ -1,5 +1,17 @@
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+input,
+button{
+  outline: none;
+}
+
 /* Basic Style */
-.page{
+.page {
   background-color: #f8f8f8;
   color: #333;
   font-family: Lato, sans-serif;
@@ -24,7 +36,7 @@
   }
 
 }
-.main_todo {
+.main-task {
   display: block;
   width: 500px;
   margin: 0 auto 0;
@@ -37,19 +49,7 @@
 .add-task_form {
   display: flex;
 }
-ul {
-  margin: 0;
-  padding: 0px;
-}
-li, 
-h3 {
-  list-style: none;
-}
-input,
-button{
-  outline: none;
-}
-.btn{
+.btn {
   background: none;
   border: 0px;
   color: #888;
@@ -63,7 +63,7 @@ button{
 }
 /* Heading */
 .name-block, 
-.add-task_label  {
+.add-task_label {
   color: #333;
   font-weight: 700;
   font-size: 15px;
@@ -72,7 +72,10 @@ button{
   margin: 0;
   text-transform: uppercase;
 }
-.task_input {
+.task_input {  
+  display: inline-block;
+  flex-grow: 1;
+  width: 226px;
   margin: 0;
   font-size: 18px;
   line-height: 18px;
@@ -81,7 +84,7 @@ button{
   border: 1px solid #ddd;
   background: #fff;
   border-radius: 6px;
-  font-family: Lato, sans-serif;
+  font-family: lato, sans-serif;
   color: #888;
 }
 .task_input:focus {
@@ -89,11 +92,11 @@ button{
 }
 
 /* New Task */
-.add_task_label  {
+.add-task_label {
   display: block;
   margin: 0 0 20px;
 }
-#new_task  {
+.add-task_input {
   width: 318px;
 }
 
@@ -107,17 +110,18 @@ button{
   justify-content: space-between;
   align-items: center;
 }
-
-li > input[type="checkbox"] {
+.task_checkbox {
   margin: 0 10px;
 }
-.task_content .task_label{
+.task_content .task_label {
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
   width: 226px;
 }
-
+.task_content .task_input{
+  display: none;
+}
 .delete-btn_img {
   height: 2em;
   transform: rotateZ(45deg);
@@ -128,21 +132,18 @@ li > input[type="checkbox"] {
 }
 
 /* Completed */
-#completed_item .task_label {
+.completed_item .task_label {
   text-decoration: line-through;
   color: #888;
 }
 
 /* Edit Task */
-.change_task .task_input{
-  display: none;
-}
 
-.change_task .task{
+.task_content_active .task_input{
   display: inline-block;
   width: 224px;
 }
 
-.change_task .task_label {
+.task_content_active .task_label {
   display: none;
 }
